@@ -30,7 +30,10 @@ public class Recursividad {
             System.out.println("Caso base alcanzando la potencia");
             return 1;
         }
-        return base * potencia(base, exp-1);
+
+        int resultado = base + potencia(base, exp-1);
+        System.out.println("El resultado parcial de la potencia es: "+resultado);
+        return resultado;
     }
 
     public int sumaDigitos(int n){
@@ -39,6 +42,20 @@ public class Recursividad {
             System.out.println("Caso base alcanzando la suma de digitos");
             return 0;
         }
-        return (n % 10) + sumaDigitos(n / 10);
+        int resultado = (n % 10) + sumaDigitos(n / 10);
+        System.out.println("La suma parcial de los digitos es: " + resultado);
+        return resultado;
+    }
+
+    public int contarDifigitos(int n) {
+    System.out.println("Calculando el numero de digitos de: "+n);
+    if (n == 0) {
+            System.out.println("Caso base alcanzando el numero de digitos");
+            return 0;
+        }
+        int resultado = 1 + contarDifigitos(n / 10);
+        System.out.println("Resultado parcial de el conteo: "+resultado);
+
+        return resultado;
     }
 }

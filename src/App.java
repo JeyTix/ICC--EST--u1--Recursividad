@@ -11,5 +11,7 @@ public class App {
         System.out.println("El resultado es :"+z);
         int y= r.sumaDigitos(456);
         System.out.println("La suma de los digitos es: "+y+"\n");
+        int d= r.contarDifigitos(345);
+        System.out.println("El resultado de el conteo de digitos es: "+d+"\n");
     }
 }
