@@ -25,7 +25,14 @@ public class RenombrarDirectorios {
         for (File directorioArch : directoriosArchInter) {
             if (directorioArch.isDirectory()) {
                 String nombreOriginal= directorioArch.getName();
-                
+                String nuevoNombre= "Nuevo- "+nombreOriginal;
+
+                File nuevoDirectorio= new File(directorioArch.getParent(),nuevoNombre);
+                if (directorioArch.renameTo(nuevoDirectorio)) {
+                    System.out.println("Renombrar nombres ");
+                    renombrarDirecInternos(direct);
+                }
+
             }
         }
 
