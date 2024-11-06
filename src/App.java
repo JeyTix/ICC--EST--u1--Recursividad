@@ -19,7 +19,17 @@ public class App {
 
 
         //Directorio
-        RenombrarDirectorios rN= new RenombrarDirectorios();
-        rN.renombrarDirec("src/Directorios");
+        // RenombrarDirectorios rN= new RenombrarDirectorios();
+        // rN.renombrarDirec("src/Directorios");
+
+        Recursividad recursividad = new Recursividad();
+        int[] arr = {1, 3, 5, 7, 9, 11};
+        
+        int resultadoBinario = recursividad.busquedaBinaria(arr, 0, arr.length - 1, 7);
+        System.out.println("Resultado de búsqueda binaria: " + resultadoBinario);
+        
+        int resultadoSecuencial = recursividad.busquedaSecuencial(arr, 0, 5);
+        System.out.println("Resultado de búsqueda secuencial: " + resultadoSecuencial);
+    
     }
 }

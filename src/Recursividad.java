@@ -73,4 +73,40 @@ public class Recursividad {
         System.out.println("Resultado parcial: " + resultado);
         return resultado;
     }
+
+    
+    public int busquedaBinaria(int[] arr, int inicio, int fin, int objetivo) {
+        System.out.println("Buscando " + objetivo + " entre índices " + inicio + " y " + fin);
+        if (inicio > fin) {
+            System.out.println("Elemento no encontrado");
+            return -1; 
+        }
+        
+        int medio = inicio + (fin - inicio) / 2;
+        System.out.println("Índice medio: " + medio + ", Valor medio: " + arr[medio]);
+        
+        if (arr[medio] == objetivo) {
+            System.out.println("Elemento encontrado en el índice: " + medio);
+            return medio; 
+        } else if (arr[medio] > objetivo) {
+            return busquedaBinaria(arr, inicio, medio - 1, objetivo); 
+        } else {
+            return busquedaBinaria(arr, medio + 1, fin, objetivo); 
+        }
+    }
+
+    public int busquedaSecuencial(int[] arr, int indice, int objetivo) {
+        System.out.println("Buscando " + objetivo + " en el índice " + indice);
+        if (indice >= arr.length) {
+            System.out.println("Elemento no encontrado");
+            return -1;
+        }
+        
+        if (arr[indice] == objetivo) {
+            System.out.println("Elemento encontrado en el índice: " + indice);
+            return indice;
+        }
+        
+        return busquedaSecuencial(arr, indice + 1, objetivo); 
+    }
 }
